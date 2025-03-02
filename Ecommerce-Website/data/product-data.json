@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "Wooden Table",
+      "price": 199.99,
+      "image": "images/table.webp"
+    },
+    {
+      "id": 2,
+      "name": "Wooden Chair",
+      "price": 99.99,
+      "image": "images/chair.webp"
+    },
+    {
+      "id": 3,
+      "name": "Wooden Cabinet",
+      "price": 299.99,
+      "image": "images/cabinet.webp"
+    },
+    {
+      "id": 4,
+      "name": "Wooden Bed",
+      "price": 499.99,
+      "image": "images/bed.webp"
+    }
+  ]

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather Site</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <img src="./images/icons/umbrella.png" alt="icon" />
+      <ul>
+        <li>
+          <a href="#">
+            <img
+              src="./images/icons/icons8-partly-cloudy-day-30.png"
+              alt="weather"
+              loading="lazy"
+            />
+            Weather
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img
+              src="./images/icons/icons8-list-24.png"
+              alt="cities"
+              loading="lazy"
+            />
+            Cities
+          </a>
+        </li>
+        <!-- <li><a href="#"></a></li> -->
+      </ul>
+    </div>
+    <div class="weather-container">
+      <div class="InputContainer">
+        <input
+          placeholder="Search for cities"
+          id="city"
+          class="input"
+          name="city"
+          type="text"
+          autofocus
+        />
+      </div>
+      <div id="weatherInfo">
+        <div class="cityname">
+          <h2 id="cityName"></h2>
+        </div>
+        <img id="weatherIcon" src="" alt="" loading="lazy" />
+        <h2 id="temperature"></h2>
+        <p id="description"></p>
+      </div>
+      <div class="air-condition">
+        <div class="header"><h3>Air Condition</h3></div>
+        <div class="info">
+          <p id="humidity"></p>
+          <p id="real-feel"></p>
+          <p id="wind-speed"></p>
+          <p id="pressure"></p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
