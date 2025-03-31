@@ -41,7 +41,7 @@ header .cart a {
 }
 
 .hero {
-  background: url('/Ecommerce-Website/images/hero.jpg') no-repeat center
+  background: url('./images/hero.jpg') no-repeat center
     center/cover;
   color: #fff;
   text-align: center;
