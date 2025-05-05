@@ -4,7 +4,7 @@ function renderCartItems() {
   const cartItemsContainer = document.getElementById('cart-items');
   const totalPriceElement = document.getElementById('total-price');
 
-  // Use a template literal for the HTML
+
   cartItemsContainer.innerHTML = cartItems.length
     ? `
     ${cartItems
@@ -22,7 +22,6 @@ function renderCartItems() {
   `
     : '<p>Your cart is empty.</p>';
 
-  // Calculate the total price using reduce
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
 
   totalPriceElement.textContent = totalPrice.toFixed(2);
