@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="app-sidebar">
+        <div class="sidebar-header">
+          <img
+            src="./images/icons/umbrella.png"
+            alt="Weather App Icon"
+            class="app-icon"
+          />
+          <h1>Forecast</h1>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item active">
+            <img
+              src="./images/icons/icons8-partly-cloudy-day-30.png"
+              alt="Weather"
+            />
+            <span>Weather</span>
+          </a>
+          <a href="#" class="nav-item">
+            <img src="./images/icons/icons8-list-24.png" alt="Cities" />
+            <span>Cities</span>
+          </a>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="weather-status">
+            <img id="sidebarWeatherIcon" src="" alt="" />
+            <span id="sidebarTemp">--°</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="app-main">
+        <div class="search-container glassmorphism">
+          <input
+            type="text"
+            id="city"
+            class="search-input"
+            placeholder="Search city..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button class="search-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="weather-display">
+          <div class="current-weather glassmorphism">
+            <div class="weather-header">
+              <h2 id="cityName">Loading...</h2>
+              <p id="description">--</p>
+            </div>
+            <div class="weather-main">
+              <div class="temperature-display">
+                <h1 id="temperature">--°</h1>
+                <div class="min-max">
+                  <span id="tempMin">--°</span>
+                  <span id="tempMax">--°</span>
+                </div>
+              </div>
+              <img id="weatherIcon" src="" alt="" class="weather-icon" />
+            </div>
+          </div>
+
+          <div class="air-conditions glassmorphism">
+            <h3>Air Conditions</h3>
+            <div class="conditions-grid">
+              <div class="condition-item">
+                <span>Real Feel</span>
+                <span id="real-feel">--°</span>
+              </div>
+              <div class="condition-item">
+                <span>Wind</span>
+                <span id="wind-speed">-- m/s</span>
+              </div>
+              <div class="condition-item">
+                <span>Humidity</span>
+                <span id="humidity">--%</span>
+              </div>
+              <div class="condition-item">
+                <span>Pressure</span>
+                <span id="pressure">-- hPa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

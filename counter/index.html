@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://images.unsplash.com/photo-1708515830903-ed46de5c5d4b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxkYXJrJTIwbnVtYmVyfGVufDB8fDB8fHww"
+    />
+    <title>Simple Counter</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        background: #0f0c29;
+        background: -webkit-linear-gradient(
+          to right,
+          #24243e,
+          #302b63,
+          #0f0c29
+        );
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        overflow: hidden;
+      }
+      .container {
+        margin: 250px auto;
+      }
+      #counter {
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        font-size: 15rem;
+      }
+      h1 {
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      #decrement {
+        position: absolute;
+        top: 300px;
+        left: 20px;
+        background-color: #f44336;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 24px;
+        margin: 5px;
+        padding: 10px 20px;
+      }
+      #increment {
+        position: absolute;
+        top: 300px;
+        right: 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 24px;
+        margin: 4px;
+        padding: 10px 20px;
+      }
+      #reset {
+        position: absolute;
+        top: 500px;
+        right: 45rem;
+        background-color: #f44336;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 24px;
+        margin: 5px;
+        padding: 10px 20px;
+      }
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 24px;
+        margin: 5px;
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button type="button" id="decrement">-</button>
+      <h1 id="counter">0</h1>
+      <button type="button" id="increment">+</button>
+      <button type="reset" id="reset">Reset</button>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
