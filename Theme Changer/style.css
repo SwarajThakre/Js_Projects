@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  /* Light Colors */
+  --light-bg: #ffffff;
+  --light-text: #222222;
+  --light-btn-bg: #222222;
+  --light-btn-text: #ffffff;
+
+  /* Dark Colors */
+  --dark-bg: #121212;
+  --dark-text: #f5f5f5;
+  --dark-btn-bg: #f5f5f5;
+  --dark-btn-text: #121212;
+
+  /* Default values (fallback) */
+  --bg-color: var(--light-bg);
+  --text-color: var(--light-text);
+  --btn-bg: var(--light-btn-bg);
+  --btn-text: var(--light-btn-text);
+}
+
+/* 🌞 LIGHT MODE */
+body.light {
+  --bg-color: var(--light-bg);
+  --text-color: var(--light-text);
+  --btn-bg: var(--light-btn-bg);
+  --btn-text: var(--light-btn-text);
+}
+
+/* 🌙 DARK MODE */
+body.dark {
+  --bg-color: var(--dark-bg);
+  --text-color: var(--dark-text);
+  --btn-bg: var(--dark-btn-bg);
+  --btn-text: var(--dark-btn-text);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+  padding-top: 100px;
+  transition: all 0.3s ease;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
