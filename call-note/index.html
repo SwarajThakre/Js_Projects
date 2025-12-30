@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Call Notes App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- LEFT SIDEBAR -->
+      <div class="sidebar">
+        <button id="addBtn">➕</button>
+        <button id="upBtn">⬆️</button>
+        <button id="downBtn">⬇️</button>
+      </div>
+
+      <!-- MAIN AREA -->
+      <div class="main">
+        <!-- NOTE CARD -->
+        <div id="noteCard" class="card hidden"></div>
+
+        <!-- FORM -->
+        <form id="noteForm" class="form hidden">
+          <h2>Create Note</h2>
+
+          <input type="text" id="img" placeholder="Image URL" required />
+          <input type="text" id="name" placeholder="Name" required />
+          <input type="text" id="address" placeholder="Address" required />
+
+          <select id="priority">
+            <option value="emergency">Emergency</option>
+            <option value="important">Important</option>
+            <option value="norush">No Rush</option>
+          </select>
+
+          <textarea
+            id="purpose"
+            placeholder="Purpose / Note"
+            required
+          ></textarea>
+
+          <div class="btns">
+            <button type="submit">Create</button>
+            <button type="button" id="closeForm">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
