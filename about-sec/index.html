@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="about">
+      <h1>About <span>Me</span></h1>
+      <p class="about-text">
+        This section tells more about me. Click the buttons to know different
+        things.
+      </p>
+
+      <div class="about-container">
+        <!-- LEFT IMAGE -->
+        <div class="about-img">
+          <img
+            src="https://images.unsplash.com/photo-1527980965255-d3b416303d12"
+            alt="profile"
+          />
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="about-content">
+          <div class="btn-group">
+            <button class="tab-btn active" data-tab="skills">Skills</button>
+            <button class="tab-btn" data-tab="education">Education</button>
+            <button class="tab-btn" data-tab="experience">Experience</button>
+          </div>
+
+          <div class="tab-content">
+            <div class="tab active" id="skills">
+              <h3>My Skills</h3>
+              <p>HTML, CSS, JavaScript, React, UI Design</p>
+            </div>
+
+            <div class="tab" id="education">
+              <h3>My Education</h3>
+              <p>Bachelor's degree in Computer Science</p>
+            </div>
+
+            <div class="tab" id="experience">
+              <h3>My Experience</h3>
+              <p>Building modern web apps and learning daily</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

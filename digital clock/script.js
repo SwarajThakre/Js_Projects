@@ -5,7 +5,7 @@ function digClock(){
     let h = time.getHours();
     let m = time.getMinutes();
     let s = time.getSeconds();
-    let ampm = h >= 12  ? 'PM' : 'AM';
+    let ampm = h >= 12  ? 'PM' : 'AM'; // Determine AM/PM
 
     h = h % 12; // Convert to 12-hour format
     h = h ? h : 12;
