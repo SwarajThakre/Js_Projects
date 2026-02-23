@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Finder</title>
+    <meta
+      name="description"
+      content="Find countries by name, region, capital, and more."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <div class="brand">
+          <div class="brand__logo" aria-hidden="true">CF</div>
+          <div class="brand__text">
+            <div class="brand__title">Country Finder</div>
+            <div class="brand__subtitle">Search. Filter. Explore.</div>
+          </div>
+        </div>
+
+        <div class="topbar__meta">
+          <button
+            id="themeBtn"
+            class="theme-btn"
+            type="button"
+            aria-label="Toggle theme"
+            title="Toggle dark/light mode"
+          >
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+          </button>
+          <a
+            class="link"
+            href="https://restcountries.com/"
+            target="_blank"
+            rel="noreferrer"
+            >Data: REST Countries</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="controls" aria-label="Search and filters">
+        <div class="search">
+          <label class="label" for="q">Search</label>
+          <div class="search__row">
+            <input
+              id="q"
+              class="input"
+              type="search"
+              placeholder="Try: India, Japan, Canada…"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button id="clearBtn" class="button button--ghost" type="button">
+              Clear
+            </button>
+          </div>
+          <div id="suggestions" class="suggestions" hidden></div>
+          <div class="hint">
+            Tip: press <kbd>Enter</kbd> to search, <kbd>Esc</kbd> to clear.
+          </div>
+        </div>
+
+        <div class="filters">
+          <div class="field">
+            <label class="label" for="region">Region</label>
+            <select id="region" class="input">
+              <option value="">All regions</option>
+              <option value="Africa">Africa</option>
+              <option value="Americas">Americas</option>
+              <option value="Antarctic">Antarctic</option>
+              <option value="Asia">Asia</option>
+              <option value="Europe">Europe</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="label" for="sort">Sort</label>
+            <select id="sort" class="input">
+              <option value="relevance">Relevance</option>
+              <option value="name-asc">Name A → Z</option>
+              <option value="name-desc">Name Z → A</option>
+              <option value="pop-desc">Population high → low</option>
+              <option value="pop-asc">Population low → high</option>
+              <option value="area-desc">Area high → low</option>
+              <option value="area-asc">Area low → high</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="layout">
+        <section class="panel" aria-label="Results">
+          <div class="panel__header">
+            <h2 class="panel__title">Results</h2>
+            <div id="status" class="status" role="status" aria-live="polite">
+              Ready
+            </div>
+          </div>
+          <div id="results" class="results" aria-label="Countries list"></div>
+        </section>
+
+        <aside class="panel panel--details" aria-label="Country details">
+          <div class="panel__header">
+            <h2 class="panel__title">Details</h2>
+            <button id="randomBtn" class="button" type="button">
+              Random country
+            </button>
+          </div>
+          <div id="details" class="details">
+            <div class="empty">Search for a country to see details here.</div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="muted">
+          Built as a single-page demo. Works best with an internet connection.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
