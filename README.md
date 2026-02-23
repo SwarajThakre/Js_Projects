@@ -1,4 +1,4 @@
-# JavaScript Project Name
+# JavaScript Projects
 
 A brief description of what this project does.
 
@@ -6,7 +6,7 @@ A brief description of what this project does.
 
 ## 🚀 Description
 
-This project is built using **JavaScript** to practice and demonstrate core concepts and modern features.  
+This all projects are built using **JavaScript** to practice and demonstrate core concepts and modern features.  
 It focuses on clean code, clarity, and practical implementation.
 
 ---
