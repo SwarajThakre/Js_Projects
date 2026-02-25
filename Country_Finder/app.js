@@ -80,7 +80,43 @@ function updateStatus(message, tone = "muted") {
     statusMsg.dataset.tone = tone;
 }
 
-// render countries only
+// render function ------
+
+function renderSuggestions(countries) {
+    suggestionsList.innerHTML = "";
+    selectedSuggestionIdx = -1;
+
+    if (countries.length === 0) {
+        suggestionsList.hidden = true;
+        return;
+    }
+
+    countries.slice(0, 5).forEach((country, idx) => {
+        const suggestionItem = document.createElement("div");
+        suggestionItem.classList.add("suggestions__item");
+        suggestionItem.setAttribute("role", "option");
+        suggestionItem.dataset.index = String(idx);
+
+        const countryName = document.createElement("div");
+        countryName.classList.add("suggestions__name");
+        countryName.textContent = country.name.common;
+
+        const countryRegion = document.createElement("div");
+        countryRegion.classList.add("suggestions__region");
+        countryRegion.textContent = country.region;
+        suggestionItem.appendChild(countryName);
+        suggestionItem.appendChild(countryRegion);
+        
+        suggestionItem.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+            showDetails(country);
+            suggestionsList.hidden = true;
+        });
+        suggestionsList.appendChild(suggestionItem);
+    });
+
+    suggestionsList.hidden = false;
+}
 
 function renderCountries(countries) {
     resultsContainer.innerHTML = "";
@@ -232,6 +268,71 @@ function showDetails(country) {
 
   // append card to container
   detailsContainer.appendChild(detailsCard);
+}
+
+// User Interaction Logic ------------
+
+function pickRandomCountry() {
+    if (allCountries.length === 0) {
+        updateStatus("No countries available to pick.", "error");
+        return;
+    }
+    const randomIndex = Math.floor(Math.random() * allCountries.length);
+    const randomCountry = allCountries[randomIndex];
+    showDetails(randomCountry);
+}
+
+function clearSearch(){
+    searchInput.value = "";
+    suggestionsList.hidden = true;
+    detailsContainer.innerHTML = "";
+
+    const placeholder = document.createElement("div");
+    placeholder.classList.add("empty");
+    placeholder.textContent = "Select a country to see details.";
+    detailsContainer.appendChild(placeholder);  
+
+    updateStatus("Search cleared. Showing all countries.", "muted");
+}
+
+function setUpEventListeners() {
+    searchInput.addEventListener("input", () =>{
+        const query = searchInput.value.trim().toLowerCase();
+        if (query.length === 0) {
+            suggestionsList.hidden = true;
+            return;
+        }
+        suggestionsList.hidden = false;
+        updateSuggestionsFromInput(query);
+    });
+
+    searchInput.addEventListener("keydown", (e) => {
+
+        if(e.key === "Escape") {
+            e.preventDefault();
+            clearSearch();
+            return;
+        }
+        
+        // If suggestions hidden, don't handle arrow keys
+        if (suggestionsList.hidden) return;
+
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            selectedSuggestionIdx = (selectedSuggestionIdx + 1) % searchResults.length;
+            updateSuggestionHighlight();
+        } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            selectedSuggestionIdx = (selectedSuggestionIdx - 1 + searchResults.length) % searchResults.length;
+            updateSuggestionHighlight();
+        }
+    });
+
+    // clear button
+    clearBtn.addEventListener("click", clearSearch);
+
+    // Random button
+    randomBtn.addEventListener("click", pickRandomCountry);
 }
 
 // Initialization
